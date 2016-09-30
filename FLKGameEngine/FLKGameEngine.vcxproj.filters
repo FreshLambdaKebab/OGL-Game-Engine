@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{9cc2e07d-da4f-4d9c-9989-1bd7a1fae245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{96eaddff-6624-450b-b672-e9f2b8128804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Frameworks">
+      <UniqueIdentifier>{a8ab6757-2804-4e46-b749-24f5603e92a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Foundations">
+      <UniqueIdentifier>{6bdb13fc-bcd6-42e1-9eb1-18e790e6b159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Foundations\Vectors">
+      <UniqueIdentifier>{6acd6424-42cd-45e9-b62c-d194f2af0dc0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Core\CoreEngine.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\CoreSettings.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Frameworks\CoreFramework.cpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Frameworks\FLK_GLFW.cpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Frameworks\FLK_SDL.cpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Frameworks\FLK_SFML.cpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Frameworks\FrameworkInterface.cpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SystemDefs.h" />
+    <ClInclude Include="src\Core\CoreEngine.hpp">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\CoreSettings.hpp">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Frameworks\CoreFramework.hpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Frameworks\FLK_GLFW.hpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Frameworks\FLK_SDL.hpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Frameworks\FLK_SFML.hpp">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Frameworks\FrameworkInterface.h">
+      <Filter>src\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Foundations\Vectors\vec2.hpp">
+      <Filter>src\Core\Foundations\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Foundations\Vectors\vec3.hpp">
+      <Filter>src\Core\Foundations\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Foundations\Vectors\vec4.hpp">
+      <Filter>src\Core\Foundations\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Foundations\Foundation.hpp">
+      <Filter>src\Core\Foundations</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
