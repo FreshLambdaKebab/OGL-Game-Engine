@@ -36,7 +36,7 @@ namespace FLKGameEngine
 		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,multisampleBuffer);
 		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing());
 
-		window = SDL_CreateWindow("SDL Window", 100, 100, coreSettings->GetWindowWidth(),
+		window = SDL_CreateWindow("SDL", 100, 100, coreSettings->GetWindowWidth(),
 								  coreSettings->GetWindowHeight(), SDL_WINDOW_OPENGL | windowResizable);
 
 		int actualWidth, actualHeight;
