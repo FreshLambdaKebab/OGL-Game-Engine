@@ -19,10 +19,10 @@ namespace FLKGameEngine
 	public:
 		CoreFramework();
 
-		void Init();
-		bool PollEvents();
-		void SwapBuffers();
-		void CleanUp();
+		void Init()override;
+		bool PollEvents()override;
+		void SwapBuffers()override;
+		void CleanUp()override;
 
 	private:
 #ifdef FLK__SDL

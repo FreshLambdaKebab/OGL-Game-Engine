@@ -18,13 +18,13 @@ namespace FLKGameEngine
 		}
 
 		//returns window size vector
-		vec2<GLint> GetWindowSize();
+		const vec2<GLint>& GetWindowSize()const;
 		
 		//returns width of app window
-		GLint GetWindowWidth();
+		GLint GetWindowWidth()const;
 		
 		//returns height of app window
-		GLint GetWindowHeight();
+		GLint GetWindowHeight()const;
 
 		//sets size of window
 		void SetWindowSize(GLint windowWidth, GLint windowHeight);
@@ -34,11 +34,11 @@ namespace FLKGameEngine
 		
 		void SetWindowHeight(GLint windowHeight);
 
-		vec2<GLint> GetScaledWindowSize();
+		const vec2<GLint>& GetScaledWindowSize()const;
 	
-		GLint GetScaledWindowWidth();
+		GLint GetScaledWindowWidth()const;
 		
-		GLint GetScaledWindowHeight();
+		GLint GetScaledWindowHeight()const;
 
 		void SetScaledWindowSize(GLint windowWidth, GLint windowHeight);
 		
@@ -46,14 +46,32 @@ namespace FLKGameEngine
 		
 		void SetScaledWindowHeight(GLint windowHeight);
 
-		
 		//returns the amount of depths bits of the application window
-		GLint GetDepthSize();
+		GLint GetDepthSize()const;
 
-		/*
-		sets the amount of depth bits for the application window
-		*/
+		//sets the amount of depth bits for the application window
 		void SetDepthSize(GLint depthSize);
+
+		//returns the amount of stencil bits of the application window
+		GLint GetStencilSize()const;
+
+		//sets the amount of depth stencil for the application window
+		void SetStencilSize(GLint stencilSize);
+
+		//get the opengl major and minor version
+		const vec2<GLint>& GetOpenGLVersion()const;
+
+		void SetOpenGLVersion(GLint major, GLint minor);
+
+		//check if the window is resizable
+		GLboolean GetWindowResizable()const;
+
+		void SetWindowResizable(GLboolean isWindowResizable);
+
+		//get anti aliasing amount
+		GLint GetAntiAliasing()const;
+
+		void SetAntiAliasing(GLint AA);
 
 	private:
 		CoreSettings();
@@ -69,5 +87,17 @@ namespace FLKGameEngine
 
 		// depth size
 		GLint depthSize;
+		//stencil size
+		GLint stencilSize;
+
+		//opengl version(major or minor)
+		vec2<GLint>openGLVersion;
+
+		//is windwo resizable
+		GLboolean isWindowResizable;
+
+		//amount AA
+		GLint antiAliasing;
+
 	};
 }

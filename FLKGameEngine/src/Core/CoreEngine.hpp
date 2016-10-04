@@ -14,26 +14,28 @@
 #endif
 
 #include "Frameworks\CoreFramework.hpp"
+#include "CoreSettings.hpp"
 
 
 namespace FLKGameEngine
 {
 
-class CoreEngine
-{
-public:
-	CoreEngine();
+	class CoreEngine
+	{
+	public:
+		CoreEngine();
 
-	bool Init();//init the framework
+		bool Init();//init the framework
 
-	bool GameLoop();//this loop is run every frame
+		bool GameLoop();//this loop is run every frame
 
-	void CleanUp();//de allocate memory
+		void CleanUp();//de allocate memory
 
-private:
-	CoreFramework coreFramework;
+	private:
+		CoreFramework coreFramework;
 
-};
+		CoreSettings* coreSettings;
+	};
 
 }
 

@@ -15,13 +15,13 @@ namespace FLKGameEngine
 	public:
 		FLK_SFML();
 
-		void Init();
+		void Init()override;
 
-		bool PollEvents();
+		bool PollEvents()override;
 
-		void SwapBuffers();
+		void SwapBuffers()override;
 
-		void CleanUp();
+		void CleanUp()override;
 
 	private:
 		sf::Window* window;

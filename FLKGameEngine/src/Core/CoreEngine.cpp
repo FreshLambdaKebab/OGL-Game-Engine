@@ -7,6 +7,7 @@ namespace FLKGameEngine
 
 	CoreEngine::CoreEngine()
 	{
+		coreSettings = CoreSettings::getInstance();
 	}
 
 	bool CoreEngine::Init()
@@ -22,7 +23,16 @@ namespace FLKGameEngine
 		}
 
 		//viewport dimensions
-
+		glViewport(0, 0, coreSettings->GetScaledWindowWidth(), coreSettings->GetScaledWindowHeight());
+	
+		if (coreSettings->GetAntiAliasing() > 0)
+		{
+			glEnable(GL_MULTISAMPLE);
+		}
+		else
+		{
+			glDisable(GL_MULTISAMPLE);
+		}
 
 		return true;
 	}

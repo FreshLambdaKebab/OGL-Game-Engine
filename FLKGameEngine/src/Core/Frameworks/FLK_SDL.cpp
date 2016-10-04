@@ -13,16 +13,31 @@ namespace FLKGameEngine
 
 	void FLK_SDL::Init()
 	{
+		int windowResizable = 0;
+
+		if (coreSettings->GetWindowResizable())
+		{
+			windowResizable = SDL_WINDOW_RESIZABLE;
+		}
+
+		int multisampleBuffer = 0;
+		if (coreSettings->GetAntiAliasing() > 0)
+		{
+			multisampleBuffer = 1;
+		}
+
 		SDL_Init(SDL_INIT_EVERYTHING);
 
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-		SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+		SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, coreSettings->GetStencilSize());
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, coreSettings->GetOpenGLVersion().major);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, coreSettings->GetOpenGLVersion().minor);
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, coreSettings->GetDepthSize());
+		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,multisampleBuffer);
+		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing());
 
-		window = SDL_CreateWindow("SDL Window",0,0, coreSettings->GetWindowWidth(),
-			                      coreSettings->GetWindowHeight(), SDL_WINDOW_OPENGL);
+		window = SDL_CreateWindow("SDL Window", 0, 0, coreSettings->GetWindowWidth(),
+								  coreSettings->GetWindowHeight(), SDL_WINDOW_OPENGL | windowResizable);
 
 		int actualWidth, actualHeight;
 

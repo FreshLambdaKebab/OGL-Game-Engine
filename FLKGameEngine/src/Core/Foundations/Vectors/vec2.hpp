@@ -13,6 +13,7 @@ namespace FLKGameEngine
 			struct { T x, y; };
 			struct { T r, g; };
 			struct { T width, height; };
+			struct { T major, minor; };
 		};
 	};
 

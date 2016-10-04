@@ -17,21 +17,22 @@ namespace FLKGameEngine
 
 		//set all required options
 		glfwWindowHint(GLFW_DEPTH_BITS, coreSettings->GetDepthSize());
-		glfwWindowHint(GLFW_STENCIL_BITS, 8);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_STENCIL_BITS,coreSettings->GetStencilSize());
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, coreSettings->GetOpenGLVersion().major);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, coreSettings->GetOpenGLVersion().minor);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-		glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+		glfwWindowHint(GLFW_RESIZABLE, coreSettings->GetWindowResizable());
+		glfwWindowHint(GLFW_SAMPLES, coreSettings->GetAntiAliasing());
 
 		//create glfw window
-		window = glfwCreateWindow(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), "GLFW window", nullptr, nullptr);
+		window = glfwCreateWindow(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), "GLFW", nullptr, nullptr);
 
 		int scaledWidth, scaledHeight;
 		glfwGetFramebufferSize(window, &scaledWidth, &scaledHeight);
 
 		coreSettings->SetScaledWindowWidth(scaledWidth);
-		coreSettings->SetScaledWindowWidth(scaledHeight);
+		coreSettings->SetScaledWindowHeight(scaledHeight);
 
 		if (nullptr == window)
 		{

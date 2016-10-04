@@ -16,10 +16,10 @@ namespace FLKGameEngine
 	public:
 		FLK_SDL();
 
-		void Init();//initialize SDL
-		bool PollEvents();
-		void SwapBuffers();
-		void CleanUp();
+		void Init()override;//initialize SDL
+		bool PollEvents()override;
+		void SwapBuffers()override;
+		void CleanUp()override;
 
 	private:
 		SDL_Window* window;

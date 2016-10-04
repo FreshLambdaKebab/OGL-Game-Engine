@@ -14,6 +14,7 @@ namespace FLKGameEngine
 			struct { T x, y, z; };
 			struct { T r, g, b; };
 			struct { T width, height, depth; };
+
 		};
 	};
 
