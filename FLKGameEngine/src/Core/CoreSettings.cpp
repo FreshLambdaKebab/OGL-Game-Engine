@@ -7,7 +7,10 @@
 #define FLK_DEF_OPENGL_MAJOR_VERSION 3
 #define FLK_DEF_OPENGL_MINOR_VERSION 3
 #define FLK_DEF_IS_WINDOW_RESIZABLE GL_FALSE
-#define FLK_DEF_ANTI_ALIASING 0
+#define FLK_DEF_IS_WINDOW_FULLSCREEN GL_FALSE
+#define FLK_DEF_ANTI_ALIASING 0 
+#define FLK_DEF_WINDOW_TITLE "The Fucking Default Window Title"
+#define FLK_DEF_V_SYNC GL_FALSE
 
 namespace FLKGameEngine
 {
@@ -26,12 +29,17 @@ namespace FLKGameEngine
 		this->openGLVersion.minor = FLK_DEF_OPENGL_MINOR_VERSION;
 
 		this->isWindowResizable = FLK_DEF_IS_WINDOW_RESIZABLE;
+		this->isWindowFullscreen = FLK_DEF_IS_WINDOW_FULLSCREEN;
 
 		this->antiAliasing = FLK_DEF_ANTI_ALIASING;
 
+		this->windowTitle = FLK_DEF_WINDOW_TITLE;
+
+		this->isVSync = FLK_DEF_V_SYNC;
+
 	}
 
-	//GETTERS AND SETTERS
+	//window size getters and setters
 	const vec2<GLint>& CoreSettings::GetWindowSize()const
 	{
 		return this->windowSize;
@@ -62,6 +70,7 @@ namespace FLKGameEngine
 		this->windowSize.height = windowHeight;
 	}
 
+	//scaled window getters and setters
 	const vec2<GLint>& CoreSettings::GetScaledWindowSize() const
 	{
 		return this->scaledWindowSize;
@@ -137,6 +146,17 @@ namespace FLKGameEngine
 		this->isWindowResizable = isWindowResizable;
 	}
 
+	//start window fullscreen getters and setters
+	GLboolean CoreSettings::GetWindowFullScreen() const
+	{
+		return this->isWindowFullscreen;
+	}
+
+	void CoreSettings::SetWindowFullscreen(GLboolean isWindowFullscreen)
+	{
+		this->isWindowFullscreen = isWindowFullscreen;
+	}
+
 	//start AA getters and setters
 	GLint CoreSettings::GetAntiAliasing() const
 	{
@@ -146,6 +166,28 @@ namespace FLKGameEngine
 	void CoreSettings::SetAntiAliasing(GLint AA)
 	{
 		antiAliasing = AA;
+	}
+
+	//start window title getters and setters
+	std::string CoreSettings::GetWindowTitle() const
+	{
+		return this->windowTitle;
+	}
+
+	void CoreSettings::SetWindowTitle(std::string windowTitle)
+	{
+		this->windowTitle = windowTitle;
+	}
+
+	//start vsync getters and setters
+	GLboolean CoreSettings::GetVSync() const
+	{
+		return this->isVSync;
+	}
+
+	void CoreSettings::SetVSync(GLboolean isVSync)
+	{
+		this->isVSync = isVSync;
 	}
 
 

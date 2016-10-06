@@ -14,16 +14,31 @@ namespace FLKGameEngine
 	void FLK_SDL::Init()
 	{
 		int windowResizable = 0;
-
 		if (coreSettings->GetWindowResizable())
 		{
 			windowResizable = SDL_WINDOW_RESIZABLE;
+		}
+
+		int windowFullscreen = 0;
+		if (coreSettings->GetWindowFullScreen())
+		{
+			windowFullscreen = SDL_WINDOW_FULLSCREEN;
 		}
 
 		int multisampleBuffer = 0;
 		if (coreSettings->GetAntiAliasing() > 0)
 		{
 			multisampleBuffer = 1;
+		}
+
+		GLint vsync;
+		if (coreSettings->GetVSync())
+		{
+			vsync = vsync = 1;
+		}
+		else
+		{
+			vsync = 0;
 		}
 
 		SDL_Init(SDL_INIT_EVERYTHING);
@@ -35,9 +50,11 @@ namespace FLKGameEngine
 		SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, coreSettings->GetDepthSize());
 		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,multisampleBuffer);
 		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing());
+		SDL_GL_SetSwapInterval(vsync);
 
-		window = SDL_CreateWindow("SDL", 100, 100, coreSettings->GetWindowWidth(),
-								  coreSettings->GetWindowHeight(), SDL_WINDOW_OPENGL | windowResizable);
+		window = SDL_CreateWindow(coreSettings->GetWindowTitle().c_str(), 100, 100, coreSettings->GetWindowWidth(),
+								  coreSettings->GetWindowHeight(), SDL_WINDOW_OPENGL | windowResizable | windowFullscreen);
+
 
 		int actualWidth, actualHeight;
 

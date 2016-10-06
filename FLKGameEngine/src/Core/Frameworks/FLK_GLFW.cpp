@@ -15,6 +15,24 @@ namespace FLKGameEngine
 		//init glfw
 		glfwInit();
 
+		GLFWmonitor* fullscreen = nullptr;
+
+		if (coreSettings->GetWindowFullScreen())
+		{
+			fullscreen = glfwGetPrimaryMonitor();
+		}
+
+		GLint vsync;
+
+		if (coreSettings->GetVSync())
+		{
+			vsync = 1;
+		}
+		else 
+		{
+			vsync = 0;
+		}
+
 		//set all required options
 		glfwWindowHint(GLFW_DEPTH_BITS, coreSettings->GetDepthSize());
 		glfwWindowHint(GLFW_STENCIL_BITS,coreSettings->GetStencilSize());
@@ -25,8 +43,10 @@ namespace FLKGameEngine
 		glfwWindowHint(GLFW_RESIZABLE, coreSettings->GetWindowResizable());
 		glfwWindowHint(GLFW_SAMPLES, coreSettings->GetAntiAliasing());
 
+
 		//create glfw window
-		window = glfwCreateWindow(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), "GLFW", nullptr, nullptr);
+		window = glfwCreateWindow(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(),
+			                      coreSettings->GetWindowTitle().c_str(), fullscreen, nullptr);
 
 		int scaledWidth, scaledHeight;
 		glfwGetFramebufferSize(window, &scaledWidth, &scaledHeight);
@@ -39,6 +59,8 @@ namespace FLKGameEngine
 			std::cout << "Failed to create GLFW window!" << std::endl;
 			glfwTerminate();
 		}
+
+		glfwSwapInterval(vsync);
 
 		glfwMakeContextCurrent(window);
 	}

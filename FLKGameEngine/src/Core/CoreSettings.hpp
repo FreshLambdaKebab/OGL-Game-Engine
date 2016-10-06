@@ -3,6 +3,8 @@
 #include <GL\glew.h>
 #include "Foundations\Foundation.hpp"
 
+#include <string>
+
 namespace FLKGameEngine
 {
 	class CoreSettings
@@ -68,10 +70,25 @@ namespace FLKGameEngine
 
 		void SetWindowResizable(GLboolean isWindowResizable);
 
+		//check if window is fullscreen
+		GLboolean GetWindowFullScreen()const;
+
+		void SetWindowFullscreen(GLboolean isWindowFullscreen);
+
 		//get anti aliasing amount
 		GLint GetAntiAliasing()const;
 
 		void SetAntiAliasing(GLint AA);
+
+		//get the window title
+		std::string GetWindowTitle()const;
+
+		void SetWindowTitle(std::string windowTitle);
+
+		//check if vsync is enabled
+		GLboolean GetVSync()const;
+
+		void SetVSync(GLboolean isVSync);
 
 	private:
 		CoreSettings();
@@ -93,11 +110,18 @@ namespace FLKGameEngine
 		//opengl version(major or minor)
 		vec2<GLint>openGLVersion;
 
-		//is windwo resizable
+		//boolean "is window's"
 		GLboolean isWindowResizable;
+
+		GLboolean isWindowFullscreen;
 
 		//amount AA
 		GLint antiAliasing;
+
+		//the widnow title
+		std::string windowTitle;
+
+		GLboolean isVSync;
 
 	};
 }
