@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Core\CoreEngine.hpp"
+#include "FLKGameEngine\FLKGameEngine.hpp"
 
-using namespace FLKGameEngine;
+USING_NAMESPACE_FLK_GAME_ENGINE;
 
 int main(int argc, char* argv[])
 {
@@ -9,12 +9,9 @@ int main(int argc, char* argv[])
 
 	engine.Init();
 
-	while (true)
+	while (engine.WindowIsOpen())
 	{
-		if (!engine.GameLoop())
-		{
-			break;
-		}
+		engine.GameLoop();
 	}
 
 	engine.CleanUp();

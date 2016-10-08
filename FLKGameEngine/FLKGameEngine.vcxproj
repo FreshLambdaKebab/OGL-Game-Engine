@@ -18,6 +18,31 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FLKGameEngine\Core\CoreEngine.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\CoreSettings.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\FLKGameEngine\Core\CoreEngine.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\CoreSettings.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Foundations\Foundation.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec2.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec3.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec4.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.hpp" />
+    <ClInclude Include="src\FLKGameEngine\FLKGameEngine.hpp" />
+    <ClInclude Include="src\FLKGameEngine\SystemDefs.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FA3A8E09-8AB5-4C0C-8871-FD22486D60A9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -76,6 +101,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)../deps/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)../deps/lib/;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -90,7 +117,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,11 +132,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)../deps/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;glfw3.lib;glew32s.lib;opengl32.lib;SOIL.lib;SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,30 +176,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Core\CoreEngine.cpp" />
-    <ClCompile Include="src\Core\CoreSettings.cpp" />
-    <ClCompile Include="src\Core\Frameworks\CoreFramework.cpp" />
-    <ClCompile Include="src\Core\Frameworks\FLK_GLFW.cpp" />
-    <ClCompile Include="src\Core\Frameworks\FLK_SDL.cpp" />
-    <ClCompile Include="src\Core\Frameworks\FLK_SFML.cpp" />
-    <ClCompile Include="src\Core\Frameworks\FrameworkInterface.cpp" />
-    <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Core\CoreEngine.hpp" />
-    <ClInclude Include="src\Core\CoreSettings.hpp" />
-    <ClInclude Include="src\Core\Foundations\Foundation.hpp" />
-    <ClInclude Include="src\Core\Foundations\Vectors\vec2.hpp" />
-    <ClInclude Include="src\Core\Foundations\Vectors\vec3.hpp" />
-    <ClInclude Include="src\Core\Foundations\Vectors\vec4.hpp" />
-    <ClInclude Include="src\Core\Frameworks\CoreFramework.hpp" />
-    <ClInclude Include="src\Core\Frameworks\FLK_GLFW.hpp" />
-    <ClInclude Include="src\Core\Frameworks\FLK_SDL.hpp" />
-    <ClInclude Include="src\Core\Frameworks\FLK_SFML.hpp" />
-    <ClInclude Include="src\Core\Frameworks\FrameworkInterface.h" />
-    <ClInclude Include="src\SystemDefs.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
