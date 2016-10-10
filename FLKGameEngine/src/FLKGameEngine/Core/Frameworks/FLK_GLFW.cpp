@@ -86,7 +86,7 @@ namespace FLKGameEngine
 		glfwTerminate();
 	}
 
-	bool FLK_GLFW::WindowIsOpen()
+	bool FLK_GLFW::WindowIsOpen()const
 	{
 		if (glfwWindowShouldClose(window))
 		{

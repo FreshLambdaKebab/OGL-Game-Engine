@@ -31,7 +31,7 @@ namespace FLKGameEngine
 
 		void CleanUp();//de allocate memory
 
-		bool WindowIsOpen();//is the window still open or not
+		bool WindowIsOpen()const;//is the window still open or not
 
 
 	private:

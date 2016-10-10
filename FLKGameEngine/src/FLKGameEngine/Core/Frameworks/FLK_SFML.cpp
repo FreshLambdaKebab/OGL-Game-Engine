@@ -70,7 +70,7 @@ namespace FLKGameEngine
 		this->window->close();
 	}
 
-	bool FLK_SFML::WindowIsOpen()
+	bool FLK_SFML::WindowIsOpen()const
 	{
 		if (window->isOpen() == true)
 		{

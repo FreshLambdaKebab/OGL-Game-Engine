@@ -92,7 +92,7 @@ namespace FLKGameEngine
 		SDL_Quit();
 	}
 
-	bool FLK_SDL::WindowIsOpen()
+	bool FLK_SDL::WindowIsOpen()const
 	{
 		return isOpen;
 	}

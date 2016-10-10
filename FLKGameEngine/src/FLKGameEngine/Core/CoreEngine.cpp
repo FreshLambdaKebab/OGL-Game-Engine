@@ -56,7 +56,7 @@ namespace FLKGameEngine
 		coreFramework.CleanUp();
 	}
 
-	bool CoreEngine::WindowIsOpen()
+	bool CoreEngine::WindowIsOpen()const
 	{
 		return coreFramework.WindowIsOpen();
 	}

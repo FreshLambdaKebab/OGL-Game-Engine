@@ -23,7 +23,7 @@ namespace FLKGameEngine
 
 		void CleanUp()override;
 
-		bool WindowIsOpen()override;
+		bool WindowIsOpen()const override;
 
 		void CloseWindow()override;
 
