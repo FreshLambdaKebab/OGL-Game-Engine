@@ -11,6 +11,17 @@ int main(int argc, char* argv[])
 
 	while (engine.WindowIsOpen())
 	{
+		/*
+		if ( ce.getEvents().Keyboard().Pressed() )
+		{
+		if ( ce.getEvents().Keyboard().Key() == 'A' )
+		{
+
+		}
+		}
+		*/
+
+		//std::cout << ce.getCoreSettings()->GetWindowTitle() << std::endl;
 		engine.GameLoop();
 	}
 

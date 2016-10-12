@@ -6,11 +6,11 @@
 #include <GL\glew.h>
 
 #ifdef FLK__SDL
-	#include "Frameworks\FLK_SDL.hpp"
+	#include "Frameworks\FrameworkSDL.hpp"
 #elif defined(FLK__SFML)
-	#include "Frameworks\FLK_SFML.hpp"
+	#include "Frameworks\FrameworkSFML.hpp"
 #elif defined(FLK__GLFW)
-#include "Frameworks\FLK_GLFW.hpp"
+#include "Frameworks\FrameworkGLFW.hpp"
 #endif
 
 #include "Frameworks\CoreFramework.hpp"
@@ -33,6 +33,7 @@ namespace FLKGameEngine
 
 		bool WindowIsOpen()const;//is the window still open or not
 
+		CoreSettings* getCoreSettings() { return this->coreSettings; }
 
 	private:
 		CoreFramework coreFramework;

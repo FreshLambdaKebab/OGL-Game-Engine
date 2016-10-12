@@ -4,11 +4,11 @@
 #include "FLKGameEngine\SystemDefs.h"
 
 #ifdef FLK__SDL
-	#include "FLK_SDL.hpp"
+	#include "FrameworkSDL.hpp"
 #elif defined(FLK__SFML)
-	#include "FLK_SFML.hpp"
+	#include "FrameworkSFML.hpp"
 #elif defined(FLK__GLFW)
-	#include "FLK_GLFW.hpp"
+	#include "FrameworkGLFW.hpp"
 #endif
 
 namespace FLKGameEngine
@@ -28,11 +28,11 @@ namespace FLKGameEngine
 
 	private:
 #ifdef FLK__SDL
-		FLK_SDL frameworkObject;
+		FrameworkSDL frameworkObject;
 #elif defined(FLK__SFML)
-		FLK_SFML frameworkObject;
+		FrameworkSFML frameworkObject;
 #elif defined(FLK__GLFW)
-		FLK_GLFW frameworkObject;
+		FrameworkGLFW frameworkObject;
 #endif
 	};
 
