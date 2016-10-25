@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "../CoreSettings.hpp"
+#include "Events\CoreEvents.hpp"
 
 namespace FLKGameEngine
 {
@@ -22,7 +23,7 @@ namespace FLKGameEngine
 
 	protected:
 		CoreSettings* coreSettings;
-
+		CoreEvents* coreEvents;
 	};
 
 }

@@ -15,6 +15,7 @@
 
 #include "Frameworks\CoreFramework.hpp"
 #include "CoreSettings.hpp"
+#include "Frameworks\Events\CoreEvents.hpp"
 
 
 namespace FLKGameEngine
@@ -33,12 +34,14 @@ namespace FLKGameEngine
 
 		bool WindowIsOpen()const;//is the window still open or not
 
-		CoreSettings* getCoreSettings() { return this->coreSettings; }
+		CoreSettings* getSettings() { return this->coreSettings; }
+		CoreEvents* getEvents() { return this->coreEvents; }
 
 	private:
 		CoreFramework coreFramework;
 
 		CoreSettings* coreSettings;
+		CoreEvents* coreEvents;
 	};
 
 }

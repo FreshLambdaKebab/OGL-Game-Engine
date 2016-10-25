@@ -8,6 +8,8 @@ namespace FLKGameEngine
 	CoreEngine::CoreEngine()
 	{
 		coreSettings = CoreSettings::getInstance();
+
+		coreEvents = CoreEvents::getInstance();
 	}
 
 	bool CoreEngine::Init()

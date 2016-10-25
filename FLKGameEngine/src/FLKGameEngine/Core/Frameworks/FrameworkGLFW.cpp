@@ -64,9 +64,7 @@ namespace FLKGameEngine
 			glfwTerminate();
 		}
 
-		glfwSetKeyCallback(window,FrameworkGLFW::KeyCallback);
-
-		glfwSetWindowCloseCallback(window, cbfun);
+		glfwSetKeyCallback(window,KeyCallback);
 
 		glfwSwapInterval(vsync);
 
@@ -101,9 +99,16 @@ namespace FLKGameEngine
 
 	void FrameworkGLFW::KeyCallback(GLFWwindow * window, int key, int scancode, int action, int mods)
 	{
-		std::cout << GLFW_KEY_A + 32 << std::endl;
+		CoreEvents* tempEventsObject = CoreEvents::getInstance();
 
-		std::cout << "Input" << std::endl;
+		if(GLFW_PRESS == action)
+		{
+			tempEventsObject->SetKeyboardStatus(KEYSTATUS::PRESSED);
+		}
+		else if (GLFW_RELEASE == action)
+		{
+			tempEventsObject->SetKeyboardStatus(KEYSTATUS::RELEASED);
+		}
 	}
 
 }

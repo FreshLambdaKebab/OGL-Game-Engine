@@ -11,13 +11,14 @@ int main(int argc, char* argv[])
 
 	while (engine.WindowIsOpen())
 	{
+		std::cout << engine.getEvents()->CheckKeyboardStatus(KEYSTATUS::PRESSED) <<  std::endl;
 		/*
 		if ( ce.getEvents().Keyboard().Pressed() )
 		{
-		if ( ce.getEvents().Keyboard().Key() == 'A' )
-		{
+			if ( ce.getEvents().Keyboard().Key() == 'A' )
+			{
 
-		}
+			}
 		}
 		*/
 

@@ -2,6 +2,7 @@
 
 #include "EventsInterface.hpp"
 #include "FLKGameEngine\SystemDefs.h"
+#include "KeyboardDefs.h"
 
 #ifdef FLK__SDL
 #include "EventsSDL.hpp"
@@ -17,9 +18,26 @@ namespace FLKGameEngine
 	class CoreEvents : public EventsInterface
 	{
 	public:
-		void Construct();
+		static CoreEvents* getInstance()
+		{
+			if (!sInstance)
+			{
+				sInstance = new CoreEvents;
+			}
+			return sInstance;
+		}
+
+		bool CheckKeyboardStatus(int keyStatus);
+		bool CheckKeyStatus(int keyStatus, int key);
+
+		//sets the status of the keyboard
+		void SetKeyboardStatus(int keyboardStatus);
 
 	private:
+		CoreEvents();
+
+		static CoreEvents *sInstance;
+
 #ifdef FLK__SDL
 		EventsSDL eventsObject;
 #elif defined(FLK__SFML)
@@ -27,6 +45,11 @@ namespace FLKGameEngine
 #elif defined(FLK__GLFW)
 		EventsGLFW eventsObject;
 #endif
+		
+		//has a key been pressed or realeased
+		bool keyboardStatus;
+
+		int keysStatus[101];
 	};
 
 }
