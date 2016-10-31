@@ -23,6 +23,9 @@
     <Filter Include="src\FLKGameEngine\Core\Foundations\Vectors">
       <UniqueIdentifier>{f857850e-2c14-45cb-8244-c7b8113a90cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\FLKGameEngine\Core\Frameworks\Events">
+      <UniqueIdentifier>{cdba4a0a-2001-4301-a52a-194a3490d419}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -37,17 +40,32 @@
     <ClCompile Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.cpp">
       <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
     </ClCompile>
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.cpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClCompile>
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.cpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClCompile>
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.cpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClCompile>
     <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.cpp">
       <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkGLFW.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkSDL.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkSFML.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSFML.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSDL.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsInterface.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsGLFW.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\CoreEvents.cpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,16 +84,7 @@
     <ClInclude Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.hpp">
       <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
     </ClInclude>
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.hpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClInclude>
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.hpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClInclude>
     <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.hpp">
-      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
-    </ClInclude>
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.hpp">
       <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
     </ClInclude>
     <ClInclude Include="src\FLKGameEngine\Core\Foundations\Foundation.hpp">
@@ -90,5 +99,30 @@
     <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec4.hpp">
       <Filter>src\FLKGameEngine\Core\Foundations\Vectors</Filter>
     </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkGLFW.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkSDL.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkSFML.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSFML.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSDL.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsInterface.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsGLFW.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\CoreEvents.hpp">
+      <Filter>src\FLKGameEngine\Core\Frameworks\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\KeyboardDefs.h" />
   </ItemGroup>
 </Project>

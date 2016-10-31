@@ -104,10 +104,12 @@ namespace FLKGameEngine
 		if(GLFW_PRESS == action)
 		{
 			tempEventsObject->SetKeyboardStatus(KEYSTATUS::PRESSED);
+			tempEventsObject->SetKeyStatus(key, KEYSTATUS::PRESSED);
 		}
 		else if (GLFW_RELEASE == action)
 		{
 			tempEventsObject->SetKeyboardStatus(KEYSTATUS::RELEASED);
+			tempEventsObject->SetKeyStatus(key, KEYSTATUS::RELEASED);
 		}
 	}
 

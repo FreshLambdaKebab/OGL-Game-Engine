@@ -1,13 +1,19 @@
-﻿Build started 8/10/2016 1:42:44 PM.
+﻿Build started 29/10/2016 11:36:57 AM.
      1>Project "C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\FLKGameEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\src/" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D GLEW_STATIC /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\FLKGameEngine\Core\CoreEngine.cpp src\FLKGameEngine\Core\Frameworks\CoreFramework.cpp src\FLKGameEngine\Core\Frameworks\FLK_GLFW.cpp src\FLKGameEngine\Core\Frameworks\FLK_SDL.cpp src\FLKGameEngine\Core\Frameworks\FLK_SFML.cpp src\main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\src/" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D GLEW_STATIC /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\FLKGameEngine\Core\CoreEngine.cpp src\FLKGameEngine\Core\Frameworks\CoreFramework.cpp src\FLKGameEngine\Core\Frameworks\Events\CoreEvents.cpp src\FLKGameEngine\Core\Frameworks\FrameworkGLFW.cpp src\FLKGameEngine\Core\Frameworks\FrameworkInterface.cpp src\FLKGameEngine\Core\Frameworks\FrameworkSFML.cpp src\main.cpp
          main.cpp
+         FrameworkSFML.cpp
+         FrameworkGLFW.cpp
+         CoreEvents.cpp
+     1>c:\users\duran_000\skydrive\documents\visual studio 2015\projects\ogl-game-engine\flkgameengine\src\flkgameengine\core\frameworks\events\coreevents.cpp(21): warning C4305: '=': truncation from 'KEYSTATUS' to 'bool'
+     1>c:\users\duran_000\skydrive\documents\visual studio 2015\projects\ogl-game-engine\flkgameengine\src\flkgameengine\core\frameworks\events\coreevents.cpp(35): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+     1>c:\users\duran_000\skydrive\documents\visual studio 2015\projects\ogl-game-engine\flkgameengine\src\flkgameengine\core\frameworks\events\coreevents.cpp(37): warning C4305: '=': truncation from 'KEYSTATUS' to 'bool'
+     1>c:\users\duran_000\skydrive\documents\visual studio 2015\projects\ogl-game-engine\flkgameengine\src\flkgameengine\core\frameworks\events\coreevents.cpp(43): warning C4305: '=': truncation from 'KEYSTATUS' to 'bool'
+     1>c:\users\duran_000\skydrive\documents\visual studio 2015\projects\ogl-game-engine\flkgameengine\src\flkgameengine\core\frameworks\events\coreevents.cpp(68): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
          Generating Code...
          Compiling...
-         FLK_SFML.cpp
-         FLK_SDL.cpp
-         FLK_GLFW.cpp
+         FrameworkInterface.cpp
          CoreFramework.cpp
          CoreEngine.cpp
          Generating Code...
@@ -15,9 +21,14 @@
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\Debug\FLKGameEngine.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\deps/lib/" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" glfw3.lib glew32s.lib opengl32.lib SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\Debug\FLKGameEngine.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\Debug\FLKGameEngine.lib" /MACHINE:X86 Debug\CoreEngine.obj
          Debug\CoreSettings.obj
          Debug\CoreFramework.obj
-         Debug\FLK_GLFW.obj
-         Debug\FLK_SDL.obj
-         Debug\FLK_SFML.obj
+         Debug\CoreEvents.obj
+         Debug\EventsGLFW.obj
+         Debug\EventsInterface.obj
+         Debug\EventsSDL.obj
+         Debug\EventsSFML.obj
+         Debug\FrameworkGLFW.obj
+         Debug\FrameworkSDL.obj
+         Debug\FrameworkSFML.obj
          Debug\FrameworkInterface.obj
          Debug\main.obj
          FLKGameEngine.vcxproj -> C:\Users\duran_000\SkyDrive\Documents\Visual Studio 2015\Projects\OGL-Game-Engine\FLKGameEngine\Debug\FLKGameEngine.exe
@@ -25,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:11.27
+Time Elapsed 00:00:13.89

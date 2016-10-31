@@ -34,13 +34,13 @@ namespace FLKGameEngine
 	{
 		if (keyStatus == keyboardStatus)
 		{
-			keyboardStatus = KEYSTATUS::NO_STATE;
+			this->keyboardStatus = KEYSTATUS::NO_STATE;
 
 			return true;
 		}
 		else
 		{
-			keyboardStatus = KEYSTATUS::NO_STATE;
+			this->keyboardStatus = KEYSTATUS::NO_STATE;
 
 			return false;
 		}
@@ -66,6 +66,11 @@ namespace FLKGameEngine
 	void CoreEvents::SetKeyboardStatus(int keyboardStatus)
 	{
 		this->keyboardStatus = keyboardStatus;
+	}
+
+	void CoreEvents::SetKeyStatus(int key, int keyStatus)
+	{
+		//this->keysStatus[key] = keyStatus;
 	}
 
 

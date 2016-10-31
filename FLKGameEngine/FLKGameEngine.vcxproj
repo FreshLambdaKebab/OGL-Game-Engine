@@ -22,9 +22,14 @@
     <ClCompile Include="src\FLKGameEngine\Core\CoreEngine.cpp" />
     <ClCompile Include="src\FLKGameEngine\Core\CoreSettings.cpp" />
     <ClCompile Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.cpp" />
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.cpp" />
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.cpp" />
-    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\CoreEvents.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsGLFW.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsInterface.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSDL.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSFML.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkGLFW.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkSDL.cpp" />
+    <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkSFML.cpp" />
     <ClCompile Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
@@ -36,9 +41,15 @@
     <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec3.hpp" />
     <ClInclude Include="src\FLKGameEngine\Core\Foundations\Vectors\vec4.hpp" />
     <ClInclude Include="src\FLKGameEngine\Core\Frameworks\CoreFramework.hpp" />
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_GLFW.hpp" />
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SDL.hpp" />
-    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FLK_SFML.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\CoreEvents.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsGLFW.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsInterface.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSDL.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\EventsSFML.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\Events\KeyboardDefs.h" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkGLFW.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkSDL.hpp" />
+    <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkSFML.hpp" />
     <ClInclude Include="src\FLKGameEngine\Core\Frameworks\FrameworkInterface.hpp" />
     <ClInclude Include="src\FLKGameEngine\FLKGameEngine.hpp" />
     <ClInclude Include="src\FLKGameEngine\SystemDefs.h" />

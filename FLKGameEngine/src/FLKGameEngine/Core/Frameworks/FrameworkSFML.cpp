@@ -51,8 +51,8 @@ namespace FLKGameEngine
 		{
 			if (windowEvent.type == sf::Event::TextEntered)
 			{
-				if(windowEvent.text.unicode < 128)
-					std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
+				//if(windowEvent.text.unicode < 128)
+					//std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
 			}
 
 			switch (windowEvent.type)
@@ -63,7 +63,7 @@ namespace FLKGameEngine
 				break;
 
 			case sf::Event::KeyPressed:
-				std::cout << windowEvent.text.unicode << std::endl;
+				//std::cout << windowEvent.text.unicode << std::endl;
 
 				switch (windowEvent.key.code)
 				{

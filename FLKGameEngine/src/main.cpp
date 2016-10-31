@@ -11,7 +11,8 @@ int main(int argc, char* argv[])
 
 	while (engine.WindowIsOpen())
 	{
-		std::cout << engine.getEvents()->CheckKeyboardStatus(KEYSTATUS::PRESSED) <<  std::endl;
+		//std::cout << engine.getEvents()->CheckKeyboardStatus(KEYSTATUS::PRESSED) <<  std::endl;
+		std::cout << KEYS::C << std::endl;
 		/*
 		if ( ce.getEvents().Keyboard().Pressed() )
 		{
